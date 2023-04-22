@@ -1,1 +1,1 @@
-# -HW-16-JS-ITStep
+# HW-16-JS-ITStep
