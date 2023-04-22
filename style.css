@@ -1,0 +1,182 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    color: #212121;
+    padding: 10px 20px;
+    list-style: none;
+    border: 1px solid #ff6b08;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #ff6b08;
+    color: #ffffff;
+    border-color: #ff6b08;
+    box-shadow: 0px 0px 5px 2px rgba(255, 107, 8, 0.29);
+    transition: .15s ease-in-out;
+}
+
+.home {
+    margin-top: 200px;
+    display: flex;
+}
+
+.input {
+    display: block;
+    color: #212121;
+    padding: 10px 20px 10px 20px;
+    /* margin: auto; */
+    margin-bottom: 10px;
+    text-align: center;
+    list-style: none;
+    border: 1px solid #ff6b08;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+    outline: none;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 40px;
+}
+
+.input:active,
+.input:focus {
+    outline: none;
+    border: 1px solid #212121;
+}
+
+.input::placeholder {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.25);
+    font-size: 15px;
+    text-align: center;
+}
+
+.task1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 60px;
+    box-shadow: 0 0 10px #aaa;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#field {
+    margin: auto;
+    width: 950px;
+    height: 600px;
+    border: 5px solid black;
+    background-image: url(./img/football-field.jpg);
+    background-size: 950px 600px;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#ball {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    transition: all 1s;
+}
+
+#traffic-light {
+    width: 100px;
+    height: 300px;
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+    margin: 50px auto;
+}
+
+#traffic-light div {
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+}
+
+#traffic-light #red {
+    top: 10px;
+}
+
+#traffic-light #yellow {
+    top: 100px;
+}
+
+#traffic-light #green {
+    top: 190px;
+}
+.bookList ol {
+    cursor: pointer;
+}
+
+.selected {
+    color: orange;
+}

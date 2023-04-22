@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #2</title>
+</head>
+<body>
+    <div class="container">
+        <a class="button" href="./index.html">Домой</a>
+    </div>
+    <div class="task2">
+        <button class="button" onclick="openModal()">Открыть окно</button>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&#215;</span>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Perferendis placeat sunt quis assumenda voluptatibus eius accusantium iusto rerum modi,
+                    suscipit dolor temporibus, voluptas, porro aut aliquid. Ea dicta perspiciatis debitis?
+                </p>
+                <h2>Нажмите кнопку "Закрыть", чтобы закрыть его.</h2>
+                <button id="button" class="button" onclick="closeModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const modal = document.getElementById('modal');
+        const button = document.getElementById('button');
+        function openModal() {
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
