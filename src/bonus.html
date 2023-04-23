@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Bonus</title>
+</head>
+<body>
+    <div class="container">
+        <a class="button" href="../index.html">Домой</a>
+    </div>
+    <div class="bonus">
+        <ol class="bookList">
+            <li>JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan;</li>
+            <li>"Eloquent JavaScript: A Modern Introduction to Programming" by Marijn Haverbeke;</li>
+            <li>"JavaScript: The Good Parts" by Douglas Crockford;</li>
+            <li>"Programming JavaScript Applications: Robust Web Architecture with Node, HTML5, and Moderns JS
+                Libraries" by Eric Elliott;</li>
+            <li>"Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript" by David Herman;</li>
+            <li>"JavaScript: The Definitive Guide" by David Flanagan;</li>
+            <li>"You Don't Know JS" by Kyle Simpson;</li>
+        </ol>
+    </div>
+    <script>
+        const books = document.querySelectorAll('.bookList li');
+        let currentBook = null;
+        books.forEach(function (book) {
+            book.addEventListener('click', function () {
+                if (currentBook === null) {
+                    this.classList.add('active');
+                    currentBook = this;
+
+                }
+                else if (this === currentBook && this.classList.contains('active')) {
+                    this.classList.remove('active');
+                    currentBook = null;
+                }
+                else {
+                    currentBook.classList.remove('active');
+                    this.classList.add('active');
+                    currentBook = this;
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

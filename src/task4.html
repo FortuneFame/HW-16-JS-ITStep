@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task #4</title>
+</head>
+
+    <body>
+        <div class="container">
+            <a class="button" href="../index.html">Домой</a>
+        </div>
+        <div id="traffic-light">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green"></div>
+        </div>
+
+        <button class="button" id="btn">NEXT</button>
+
+        <script>
+            class State {
+                constructor(name, dur, next) {
+                    this.name = name;
+                    this.dur = dur;
+                    this.next = next;
+                }
+            }
+
+            class Constroller {
+                trigger(state, callback) {
+                    callback(state);
+                    setTimeout(() => {
+                        this.trigger(state.next, callback);
+                    }, state.dur * 1000);
+                }
+            }
+
+            const trafficLight = document.getElementById('traffic-light');
+            const red = new State('red', 2);
+            const yellowR = new State('yellow', 1);
+            const green = new State('green', 3);
+            const yellowG = new State('yellow', 1);
+
+            red.next = yellowR;
+            yellowR.next = green;
+            green.next = yellowG;
+            yellowG.next = red;
+
+            let currentState = red;
+            let currentLight = trafficLight.querySelector('.red');
+            currentLight.classList.add('active');
+
+            const switchLight = () => {
+                currentLight.classList.remove('active');
+                currentState = currentState.next;
+                switch (currentState.name) {
+                    case 'red':
+                        currentLight = trafficLight.querySelector('.red');
+                        break;
+                    case 'yellow':
+                        currentLight = trafficLight.querySelector('.yellow');
+                        break;
+                    case 'green':
+                        currentLight = trafficLight.querySelector('.green');
+                        break;
+                }
+                currentLight.classList.add('active');
+            }
+
+            const button = document.getElementById('btn');
+            button.addEventListener('click', switchLight);
+
+        </script>
+    </body>
+
+</html>
